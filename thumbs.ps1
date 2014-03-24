@@ -5,7 +5,7 @@ $thumbsPrefix = "t_";
 $listFileName = "thumbs.list";
 $listFileSeparatorToken = "||";
 
-$images = get-childitem -Filter *.jpg;
+$images = get-childitem -Filter *.jpg | Sort-Object LastWriteTime -descending;
 foreach ($image in $images)
 { 
 	if (!$directory)
